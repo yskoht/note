@@ -1,0 +1,20 @@
+#!/bin/sh
+source ~/.noterc
+
+if [ "${NOTE_PATH}" == "" ]; then
+  NOTE_PATH=.
+fi
+
+if [ "${EDITOR}" == "" ]; then
+  EDITOR=vi
+fi
+
+date=$(date +%Y-%m-%d)
+tmpfile=$(mktemp)
+
+echo ${date}_ > ${tmpfile}
+${EDITOR} ${tmpfile}
+title=$(head -n 1 ${tmpfile})
+cp "${tmpfile}" "${NOTE_PATH}/${title}.txt"
+rm "${tmpfile}"
+
