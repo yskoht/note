@@ -15,6 +15,5 @@ tmpfile=$(mktemp)
 echo ${date}_ > ${tmpfile}
 ${EDITOR} ${tmpfile}
 title=$(head -n 1 ${tmpfile})
-cp "${tmpfile}" "${NOTE_PATH}/${title}.txt"
-rm "${tmpfile}"
+mv "${tmpfile}" "${NOTE_PATH}/${title}.txt"
 
