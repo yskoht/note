@@ -6,7 +6,7 @@
 Make configure file.
 
 ```bash
-echo 'NOTE_PATH=/path/to/file/'
+echo 'NOTE_PATH=/path/to/file/' > ~/.noterc
 ```
 
 Take a note.
